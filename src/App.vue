@@ -30,15 +30,15 @@ export default {
     let endpoint = `https://api.themoviedb.org/3/search/${searchType}?api_key=c07677e7edac90efcbbdd18fecf0d93c&query=anelli&language=it-IT`;
     axios.get(endpoint).then((res) => {
       store.movies = res.data.results;
-      console.log(res.data);
 
+      console.log('movie', store.movies);
     });
     searchType = this.series;
     endpoint = `https://api.themoviedb.org/3/search/${searchType}?api_key=c07677e7edac90efcbbdd18fecf0d93c&query=anelli&language=it-IT`;
     axios.get(endpoint).then((res) => {
       store.series = res.data.results;
-      console.log(res.data);
 
+      console.log('serie', store.series);
     });
   }
 }
