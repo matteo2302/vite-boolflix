@@ -3,18 +3,18 @@ export default {
   props: {
     product: Object
   },
-  methods: {
-    getStars(fullStar) {
-      for (i = 0; i < 5; i++) {
-        if (i < fullStar) {
-          <i class="fa-solid fa-star"></i>;
-        } else {
-          <i class="fa-regular fa-star"></i>;
-        } return
-      }
+  // methods: {
+  //   getStars(fullStar) {
+  //     for (i = 0; i < 5; i++) {
+  //       if (i < fullStar) {
+  //         <i class="fa-solid fa-star"></i>;
+  //       } else {
+  //         <i class="fa-regular fa-star"></i>;
+  //       } return
+  //     }
 
-    }
-  },
+  //   }
+  // },
   computed: {
     hasFlag() {
       let avaibleFlag = ['it', 'en'];
@@ -41,7 +41,8 @@ export default {
       <div><img v-if="hasFlag" :src="flagSrc" :alt="product.original_language">
         <span v-else>{{ product.original_language }} </span>
       </div>
-      <div>{{ getStars(halfRate) }}</div>
+      <div><i v-for=" i in  5 " class="fa-star" :class="[i < halfRate ? 'fa-solid' : 'fa-regular']"></i>;
+      </div>
     </li>
   </ul>
 </template>
