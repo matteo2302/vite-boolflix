@@ -3,6 +3,18 @@ export default {
   props: {
     product: Object
   },
+  methods: {
+    getStars(fullStar) {
+      for (i = 0; i < 5; i++) {
+        if (i < fullStar) {
+          <i class="fa-solid fa-star"></i>;
+        } else {
+          <i class="fa-regular fa-star"></i>;
+        } return
+      }
+
+    }
+  },
   computed: {
     hasFlag() {
       let avaibleFlag = ['it', 'en'];
@@ -15,24 +27,21 @@ export default {
     halfRate() {
       return Math.ceil(this.product.vote_average / 2)
     },
-    poster() {
-      const url = new URL(`./w780${this.product.poster_path}`, import.meta.url);
-      console.log(this.product.poster_path)
-      return url.href
-    }
+
   }
 }
 </script>
 <template>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
-      <div><img :src=`./w780${this.product.poster_path}` :alt="product.name"></div>
+      <div v-if="product.poster_path"><img :src="`https://image.tmdb.org/t/p/w342${this.product.poster_path}`"
+          :alt="product.name"></div>
       <div>{{ product.title || product.name }}</div>
       <div>{{ product.original_title || product.name }}</div>
       <div><img v-if="hasFlag" :src="flagSrc" :alt="product.original_language">
         <span v-else>{{ product.original_language }} </span>
       </div>
-      <div>{{ halfRate }}</div>
+      <div>{{ getStars(halfRate) }}</div>
     </li>
   </ul>
 </template>
