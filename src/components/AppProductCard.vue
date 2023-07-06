@@ -11,6 +11,9 @@ export default {
     flagSrc() {
       const url = new URL(`../assets/${this.product.original_language}.png`, import.meta.url);
       return url.href
+    },
+    halfRate() {
+      return Math.ceil(this.product.vote_average / 2)
     }
   }
 }
@@ -23,7 +26,7 @@ export default {
       <div><img v-if="hasFlag" :src="flagSrc" :alt="product.original_language">
         <span v-else>{{ product.original_language }} </span>
       </div>
-      <div>{{ product.vote_average }}</div>
+      <div>{{ halfRate }}</div>
     </li>
   </ul>
 </template>
