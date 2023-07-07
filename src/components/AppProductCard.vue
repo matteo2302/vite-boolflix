@@ -21,15 +21,17 @@ export default {
 </script>
 <template>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">
+    <li class="list-group-item ">
       <div v-if="product.poster_path"><img :src="`https://image.tmdb.org/t/p/w342${this.product.poster_path}`"
           :alt="product.name"></div>
-      <div>{{ product.title || product.name }}</div>
-      <div>{{ product.original_title || product.name }}</div>
-      <div><img v-if="hasFlag" :src="flagSrc" :alt="product.original_language">
-        <span v-else>{{ product.original_language }} </span>
-      </div>
-      <div><i v-for=" i in  5 " class="fa-star" :class="[i < halfRate ? 'fa-solid' : 'fa-regular']"></i>;
+      <div class="d-none">
+        <div>{{ product.title || product.name }}</div>
+        <div>{{ product.original_title || product.name }}</div>
+        <div><img v-if="hasFlag" :src="flagSrc" :alt="product.original_language">
+          <span v-else>{{ product.original_language }} </span>
+        </div>
+        <div><i v-for=" i in  5 " class="fa-star" :class="[i < halfRate ? 'fa-solid' : 'fa-regular']"></i>;
+        </div>
       </div>
     </li>
   </ul>
