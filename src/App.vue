@@ -1,6 +1,7 @@
 <script>
 import AppSearch from './components/AppSearch.vue';
 import AppMain from './components/AppMain.vue';
+import AppHeader from './components/AppHeader.vue';
 import { store } from './data/store.js';
 import axios from 'axios';
 
@@ -15,7 +16,7 @@ export default {
       language: 'language=it-IT'
     }
   },
-  components: { AppSearch, AppMain },
+  components: { AppHeader, AppMain },
   methods: {
     fetchProductions(title) {
       axios.get(`${this.baseUri}/movie?api_key=${this.apiKey}&query=${title}&${this.language}`).then((res) => {
@@ -34,9 +35,11 @@ export default {
 
 <template>
   <div class="container">
-    <AppSearch @title-wrote="fetchProductions" />
+    <AppHeader @title-searched="fetchProductions" />
     <AppMain />
   </div>
 </template>
 
-<style></style>
+<style lang="scss">
+@use './assets/scss/style.scss' as *;
+</style>

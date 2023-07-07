@@ -3,18 +3,6 @@ export default {
   props: {
     product: Object
   },
-  // methods: {
-  //   getStars(fullStar) {
-  //     for (i = 0; i < 5; i++) {
-  //       if (i < fullStar) {
-  //         <i class="fa-solid fa-star"></i>;
-  //       } else {
-  //         <i class="fa-regular fa-star"></i>;
-  //       } return
-  //     }
-
-  //   }
-  // },
   computed: {
     hasFlag() {
       let avaibleFlag = ['it', 'en'];

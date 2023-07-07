@@ -11,4 +11,12 @@ export default {
     <span class="input-group-text btn btn-outline-danger" id="basic-addon2">cerca</span>
   </div>
 </template>
-<style scoped></style>
+<style scoped>
+span {
+  background-color: white;
+}
+
+div {
+  width: 500px;
+}
+</style>
