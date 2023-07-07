@@ -32,10 +32,11 @@ export default {
 </script>
 
 <template>
-  <div class="container">
+  <header>
     <AppHeader @title-searched="fetchProductions" />
-    <AppMain />
-  </div>
+  </header>
+
+  <AppMain />
 </template>
 
 <style lang="scss">

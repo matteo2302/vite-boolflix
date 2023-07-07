@@ -15,4 +15,8 @@ export default {
     <AppProductCard v-for="product in  products" :key="product.id" :product="product" />
   </section>
 </template>
-<style scoped></style>
+<style scoped>
+h2 {
+  color: white;
+}
+</style>

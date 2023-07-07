@@ -1,7 +1,7 @@
 <script>
 export default {
   data: () => ({ title: '' }),
-  emits: ['title-wrote']
+  emits: ['title-wrote'],
 }
 </script>
 <template>
