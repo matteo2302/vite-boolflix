@@ -1,5 +1,4 @@
 <script>
-import AppSearch from './components/AppSearch.vue';
 import AppMain from './components/AppMain.vue';
 import AppHeader from './components/AppHeader.vue';
 import { store } from './data/store.js';
@@ -10,7 +9,6 @@ export default {
     return {
       query: '',
       language: 'it-IT',
-      titlesearchd: '',
       baseUri: 'https://api.themoviedb.org/3/search',
       apiKey: 'c07677e7edac90efcbbdd18fecf0d93c',
       language: 'language=it-IT'
